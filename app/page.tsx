@@ -22,6 +22,8 @@ import {
 import Link from "next/link"
 import { Carousel } from "@/components/carousel"
 import { MultiCardCarousel } from "@/components/multi-card-carousel"
+import WhyChooseSection from "@/components/WhyChooseSection"
+import SprinkleParticles from "@/components/sprinkel"
 
 export default function HomePage() {
   const [isMenuOpen, setIsMenuOpen] = useState(false)
@@ -30,28 +32,29 @@ export default function HomePage() {
     setIsMenuOpen(!isMenuOpen)
   }
   
-useEffect(() => {
-  const observer = new IntersectionObserver(
-    (entries) => {
-      entries.forEach((entry) => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add('opacity-100', 'translate-y-0')
-          entry.target.classList.remove('opacity-0', '-translate-y-6')
-        }
-      })
-    },
-    {
-      threshold: 0.2,
-    }
-  )
+  
+// useEffect(() => {
+//   const observer = new IntersectionObserver(
+//     (entries) => {
+//       entries.forEach((entry) => {
+//         if (entry.isIntersecting) {
+//           entry.target.classList.add('opacity-100', 'translate-y-0')
+//           entry.target.classList.remove('opacity-0', '-translate-y-6')
+//         }
+//       })
+//     },
+//     {
+//       threshold: 0.2,
+//     }
+//   )
 
-  const targets = document.querySelectorAll('.animate-on-scroll')
-  targets.forEach((el) => observer.observe(el))
+//   const targets = document.querySelectorAll('.animate-on-scroll')
+//   targets.forEach((el) => observer.observe(el))
 
-  return () => {
-    targets.forEach((el) => observer.unobserve(el))
-  }
-}, [])
+//   return () => {
+//     targets.forEach((el) => observer.unobserve(el))
+//   }
+// }, [])
 
   const serviceCards = [
     {
@@ -371,14 +374,23 @@ useEffect(() => {
               <Zap className="mr-2 h-5 w-5" />
               Start Your Solar Journey
             </Button>
-            <Button
-              size="lg"
-              variant="outline"
-              className="border-white text-white hover:bg-white hover:text-gray-900 bg-transparent text-base sm:text-lg px-6 sm:px-8"
-            >
-              <MessageSquare className="mr-2 h-5 w-5" />
-              Free Consultation
-            </Button>
+           <div className="relative group w-fit">
+
+  {/* Sprinkle particles */}
+ <div className="relative group w-fit">
+  <Button
+    size="lg"
+    variant="outline"
+    className="relative z-10 border-white text-white hover:bg-white hover:text-gray-900 bg-transparent text-base sm:text-lg px-6 sm:px-8 overflow-hidden"
+  >
+    <MessageSquare className="mr-2 h-5 w-5" />
+    Free Consultation
+  </Button>
+
+  {/* Sprinkle Effect */}
+  <SprinkleParticles />
+</div>
+</div>
           </div>
         </div>
       </section>
@@ -391,7 +403,10 @@ useEffect(() => {
         <div className="absolute inset-0 bg-white/90"></div>
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <div className="text-center mb-8 sm:mb-12">
-            <h2 className="text-2xl sm:text-3xl font-bold text-gray-900 mb-4">Our Mission & Purpose</h2>
+            <h2 className="text-2xl sm:text-5xl font-bold mb-4 bg-gradient-to-r from-yellow-400 via-orange-500 to-red-500 text-transparent bg-clip-text">
+  Our Mission & Purpose
+</h2>
+
             <p className="text-base sm:text-lg text-gray-700 max-w-4xl mx-auto leading-relaxed">
               At SolarTech India, our mission is to accelerate India's transition to clean, renewable energy by making
               solar power accessible and affordable for every household and business. We believe in empowering
@@ -435,9 +450,9 @@ useEffect(() => {
 
       {/* Services Section */}
       <section id="services" className="py-12 sm:py-16 bg-gray-50">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-8 sm:mb-12">
-            <h2 className="text-2xl sm:text-3xl font-bold text-gray-900 mb-4">Our Solar Services</h2>
+            <h2 className="text-2xl sm:text-5xl font-bold mb-4 bg-gradient-to-r from-yellow-400 via-orange-500 to-red-500 text-transparent bg-clip-text">Our Solar Services</h2>
             <p className="text-base sm:text-lg text-gray-600">Comprehensive solar solutions tailored to your needs</p>
           </div>
 
@@ -445,7 +460,7 @@ useEffect(() => {
             {serviceCards.map((service, index) => {
               const IconComponent = service.icon
               return (
-                <Card key={index} className={`text-center hover:shadow-lg  h-full opacity-0 -translate-y-6 transition-all duration-700 ease-in-out animate-on-scroll`}>
+                <Card key={index} className="text-center hover:shadow-lg  h-full ">
                   <CardHeader className="pb-4">
                     <IconComponent className="h-10 w-10 sm:h-12 sm:w-12 text-orange-500 mx-auto mb-4" />
                     <CardTitle className="text-lg sm:text-xl">{service.title}</CardTitle>
@@ -466,7 +481,7 @@ useEffect(() => {
               {detailedServices.map((service, index) => {
                 const IconComponent = service.icon
                 return (
-                  <Card key={index} className={`text-center hover:shadow-lg  h-full opacity-0 -translate-y-6 transition-all duration-700 ease-in-out animate-on-scroll`}>
+                  <Card key={index} className="text-center hover:shadow-lg  h-full ">
                     <CardHeader className="pb-4">
                       <CardTitle className="flex items-center text-lg sm:text-xl">
                         <IconComponent className="mr-2 h-5 w-5 text-orange-500 flex-shrink-0" />
@@ -485,69 +500,9 @@ useEffect(() => {
       </section>
 
       {/* Why Choose Us Section */}
-      <section
-        className="py-12 sm:py-16 relative bg-cover bg-center bg-no-repeat"
-        style={{ backgroundImage: "url(/images/solar-installation.jpg)" }}
-      >
-        <div className="absolute inset-0 bg-white/95"></div>
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-          <div className="text-center mb-8 sm:mb-12">
-            <h2 className="text-2xl sm:text-3xl font-bold text-gray-900 mb-4">Why Choose SolarTech India?</h2>
-            <p className="text-base sm:text-lg text-gray-600 max-w-3xl mx-auto mb-6 sm:mb-8 leading-relaxed">
-              Choosing a reliable and affordable solar provider is crucial for maximizing your investment in clean
-              energy. At SolarTech India, we combine years of expertise with cutting-edge technology to deliver solar
-              solutions that exceed expectations.
-            </p>
-          </div>
+      <WhyChooseSection />
 
-          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 lg:gap-8">
-            {[
-              {
-                title: "Proven Track Record",
-                content:
-                  "Over 5,000 successful installations across India with 99% customer satisfaction rate and industry-leading performance guarantees.",
-              },
-              {
-                title: "Premium Quality Components",
-                content:
-                  "We use only Tier-1 solar panels and German-engineered inverters with 25-year warranties for maximum durability and efficiency.",
-              },
-              {
-                title: "Competitive Pricing",
-                content:
-                  "Best-in-market pricing with flexible financing options, government subsidy assistance, and transparent cost breakdowns with no hidden charges.",
-              },
-              {
-                title: "Expert Installation Team",
-                content:
-                  "Certified engineers and technicians with specialized training ensure professional installation following international safety standards.",
-              },
-              {
-                title: "Comprehensive After-Sales Support",
-                content:
-                  "24/7 monitoring, regular maintenance, quick response times, and dedicated customer support for complete peace of mind.",
-              },
-              {
-                title: "Government Approved Partner",
-                content:
-                  "Authorized installer for government schemes with expertise in subsidy processing and net metering approvals for hassle-free experience.",
-              },
-            ].map((item, index) => (
-             <div
-  key={index}
-  className="animate-on-scroll opacity-0 -translate-y-6 transition-all duration-700 ease-in-out flex items-start space-x-3 sm:space-x-4 bg-white/90 p-4 sm:p-6 rounded-lg shadow-sm"
->
-                <CheckCircle className="h-5 w-5 sm:h-6 sm:w-6 text-green-500 mt-1 flex-shrink-0" />
-                <div>
-                  <h3 className="font-semibold text-gray-900 mb-2 text-sm sm:text-base">{item.title}</h3>
-                  <p className="text-xs sm:text-sm text-gray-600 leading-relaxed">{item.content}</p>
-                </div>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
+      {/* Testimonials Section */}
       {/* Benefits Section */}
       <section
         id="benefits"
@@ -557,7 +512,7 @@ useEffect(() => {
         <div className="absolute inset-0 bg-orange-50/95"></div>
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <div className="text-center mb-8 sm:mb-12">
-            <h2 className="text-2xl sm:text-3xl font-bold text-gray-900 mb-4">Benefits of Solar Power in India</h2>
+            <h2 className="text-2xl sm:text-5xl font-bold mb-4 bg-gradient-to-r from-yellow-400 via-orange-500 to-red-500 text-transparent bg-clip-text">Benefits of Solar Power in India</h2>
             <p className="text-base sm:text-lg text-gray-600 max-w-3xl mx-auto mb-6 sm:mb-8 leading-relaxed">
               Solar power offers tremendous advantages for Indian homes and businesses. By harnessing abundant sunlight,
               you can significantly reduce electricity costs while protecting the environment.
@@ -705,7 +660,7 @@ useEffect(() => {
       <section id="testimonials" className="py-12 sm:py-16 bg-gray-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-8 sm:mb-12">
-            <h2 className="text-2xl sm:text-3xl font-bold text-gray-900 mb-4">What Our Customers Say</h2>
+            <h2 className="text-2xl sm:text-5xl font-bold mb-4 bg-gradient-to-r from-yellow-400 via-orange-500 to-red-500 text-transparent bg-clip-text">What Our Customers Say</h2>
             <p className="text-base sm:text-lg text-gray-600">Real reviews from satisfied solar customers</p>
           </div>
 
@@ -754,7 +709,8 @@ useEffect(() => {
               <Sun className="mr-2 h-5 w-5" />
               Get Free Quote
             </Button>
-            <Button
+           <div className="relative group w-fit">
+             <Button
               size="lg"
               variant="outline"
               className="border-white text-white hover:bg-white hover:text-orange-500 bg-transparent text-base sm:text-lg px-6 sm:px-8"
@@ -762,6 +718,9 @@ useEffect(() => {
               <MessageSquare className="mr-2 h-5 w-5" />
               Schedule Consultation
             </Button>
+            {/* Sprinkle Effect */}
+            <SprinkleParticles />
+            </div>
           </div>
         </div>
       </section>
