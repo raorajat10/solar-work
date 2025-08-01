@@ -18,7 +18,7 @@ const robotoMono = Roboto_Mono({
 })
 
 export const metadata: Metadata = {
-  title: 'Yash Solar Solutions',
+  title: 'SarvatraEnergy',
   description: 'Reliable solar distribution and installation services',
   generator: 'v0.dev',
 }

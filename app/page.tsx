@@ -4,7 +4,7 @@ import { useState } from "react"
 import { Button } from "@/components/ui/button"
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
-import { useEffect } from 'react'
+// import { useEffect } from 'react'
 import {
   Sun,
   Zap,
@@ -202,7 +202,7 @@ export default function HomePage() {
       rating: 5,
       title: "Exceptional Service & Savings",
       content:
-        "SolarTech India transformed our energy bills completely! Our monthly electricity cost dropped from ₹7,200 to just ₹800. The installation was professional and the team guided us through every step. We're saving over ₹75,000 annually now!",
+        "SarvatraEnergy India transformed our energy bills completely! Our monthly electricity cost dropped from ₹7,200 to just ₹800. The installation was professional and the team guided us through every step. We're saving over ₹75,000 annually now!",
       name: "Priya Mehta",
       location: "Homeowner, Mumbai",
     },
@@ -218,7 +218,7 @@ export default function HomePage() {
       rating: 5,
       title: "Reliable & Profitable",
       content:
-        "Three years with SolarTech India and we've saved ₹2.1 lakhs already! The system performs exactly as promised. No maintenance issues, great monitoring, and the team is always available for support. Highly recommend to everyone!",
+        "Three years with SarvatraEnergy India and we've saved ₹2.1 lakhs already! The system performs exactly as promised. No maintenance issues, great monitoring, and the team is always available for support. Highly recommend to everyone!",
       name: "Dr. Sunita Rao",
       location: "Homeowner, Bangalore",
     },
@@ -276,7 +276,7 @@ export default function HomePage() {
           <div className="flex justify-between items-center py-4">
             <div className="flex items-center space-x-2">
               <Sun className="h-6 w-6 sm:h-8 sm:w-8 text-orange-500" />
-              <span className="text-lg sm:text-2xl font-bold text-gray-900">SolarTech India</span>
+              <span className="text-lg sm:text-2xl font-bold text-gray-900">SarvatraEnergy</span>
             </div>
 
             {/* Desktop Navigation */}
@@ -365,7 +365,7 @@ export default function HomePage() {
             <span className="text-orange-400"> Clean Solar Energy</span>
           </h1>
           <p className="text-lg sm:text-xl text-white/90 mb-8 max-w-3xl mx-auto leading-relaxed">
-            Welcome to SolarTech India, your trusted partner in harnessing the power of the sun! We are a leading solar
+            Welcome to SarvatraEnergy India, your trusted partner in harnessing the power of the sun! We are a leading solar
             energy company dedicated to transforming homes and businesses across India with sustainable, affordable, and
             reliable solar solutions.
           </p>
@@ -408,7 +408,7 @@ export default function HomePage() {
 </h2>
 
             <p className="text-base sm:text-lg text-gray-700 max-w-4xl mx-auto leading-relaxed">
-              At SolarTech India, our mission is to accelerate India's transition to clean, renewable energy by making
+              At SarvatraEnergy India, our mission is to accelerate India's transition to clean, renewable energy by making
               solar power accessible and affordable for every household and business. We believe in empowering
               communities with sustainable energy solutions that not only reduce carbon footprints but also provide
               long-term financial savings.
@@ -421,7 +421,7 @@ export default function HomePage() {
       <section id="about" className="py-12 sm:py-16 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-8 sm:mb-12">
-            <h2 className="text-2xl sm:text-3xl font-bold text-gray-900 mb-4">About SolarTech India</h2>
+            <h2 className="text-2xl sm:text-3xl font-bold text-gray-900 mb-4">About SarvatraEnergy India</h2>
             <p className="text-base sm:text-lg text-gray-600 max-w-3xl mx-auto leading-relaxed">
               With over a decade of experience in the solar industry, we have established ourselves as India's most
               trusted solar energy partner. Our state-of-the-art facilities, expert team, and commitment to quality make
