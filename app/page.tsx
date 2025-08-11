@@ -24,6 +24,7 @@ import { Carousel } from "@/components/carousel"
 import { MultiCardCarousel } from "@/components/multi-card-carousel"
 import WhyChooseSection from "@/components/WhyChooseSection"
 import SprinkleParticles from "@/components/sprinkel"
+import Header from "@/components/header"
 
 export default function HomePage() {
   const [isMenuOpen, setIsMenuOpen] = useState(false)
@@ -271,87 +272,7 @@ export default function HomePage() {
   return (
     <div className="min-h-screen">
       {/* Header */}
-      <header className="bg-white/95 backdrop-blur-sm shadow-sm border-b fixed w-full z-50">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex justify-between items-center py-4">
-            <div className="flex items-center space-x-2">
-              <Sun className="h-6 w-6 sm:h-8 sm:w-8 text-orange-500" />
-              <span className="text-lg sm:text-2xl font-bold text-gray-900">SarvatraEnergy</span>
-            </div>
-
-            {/* Desktop Navigation */}
-            <nav className="hidden md:flex space-x-8">
-              <Link href="#services" className="text-gray-600 hover:text-orange-500 transition-colors">
-                Services
-              </Link>
-              <Link href="#about" className="text-gray-600 hover:text-orange-500 transition-colors">
-                About Us
-              </Link>
-              <Link href="#benefits" className="text-gray-600 hover:text-orange-500 transition-colors">
-                Benefits
-              </Link>
-              <Link href="#projects" className="text-gray-600 hover:text-orange-500 transition-colors">
-                Projects
-              </Link>
-              <Link href="#testimonials" className="text-gray-600 hover:text-orange-500 transition-colors">
-                Reviews
-              </Link>
-            </nav>
-
-            <div className="flex items-center space-x-4">
-              <Button className="bg-orange-500 hover:bg-orange-600 text-sm sm:text-base px-3 sm:px-4">Get Quote</Button>
-
-              {/* Mobile Menu Button */}
-              <Button variant="ghost" size="icon" className="md:hidden" onClick={toggleMenu} aria-label="Toggle menu">
-                {isMenuOpen ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}
-              </Button>
-            </div>
-          </div>
-
-          {/* Mobile Navigation */}
-          {isMenuOpen && (
-            <div className="md:hidden border-t bg-white/95 backdrop-blur-sm">
-              <nav className="py-4 space-y-2">
-                <Link
-                  href="#services"
-                  className="block px-4 py-2 text-gray-600 hover:text-orange-500 hover:bg-orange-50 transition-colors"
-                  onClick={() => setIsMenuOpen(false)}
-                >
-                  Services
-                </Link>
-                <Link
-                  href="#about"
-                  className="block px-4 py-2 text-gray-600 hover:text-orange-500 hover:bg-orange-50 transition-colors"
-                  onClick={() => setIsMenuOpen(false)}
-                >
-                  About Us
-                </Link>
-                <Link
-                  href="#benefits"
-                  className="block px-4 py-2 text-gray-600 hover:text-orange-500 hover:bg-orange-50 transition-colors"
-                  onClick={() => setIsMenuOpen(false)}
-                >
-                  Benefits
-                </Link>
-                <Link
-                  href="#projects"
-                  className="block px-4 py-2 text-gray-600 hover:text-orange-500 hover:bg-orange-50 transition-colors"
-                  onClick={() => setIsMenuOpen(false)}
-                >
-                  Projects
-                </Link>
-                <Link
-                  href="#testimonials"
-                  className="block px-4 py-2 text-gray-600 hover:text-orange-500 hover:bg-orange-50 transition-colors"
-                  onClick={() => setIsMenuOpen(false)}
-                >
-                  Reviews
-                </Link>
-              </nav>
-            </div>
-          )}
-        </div>
-      </header>
+  <Header />
 
       {/* Hero Section */}
       <section
