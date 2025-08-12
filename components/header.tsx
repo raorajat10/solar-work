@@ -48,7 +48,7 @@ export default function NavHead() {
                   onClick={() => toggleDropdown("offerings")}
                   className="flex items-center space-x-1 text-gray-700 hover:text-orange-400 font-medium"
                 >
-                  <span>Our Offerings</span>
+                  <span className="text-lg">Our Offerings</span>
                   <ChevronDown className="w-4 h-4" />
                 </button>
                 {activeDropdown === "offerings" && (
@@ -84,7 +84,7 @@ export default function NavHead() {
                   onClick={() => toggleDropdown("solutions")}
                   className="flex items-center space-x-1 text-gray-700 hover:text-orange-400 font-medium"
                 >
-                  <span>Solar Solutions</span>
+                  <span className="text-lg">Solar Solutions</span>
                   <ChevronDown className="w-4 h-4" />
                 </button>
                 {activeDropdown === "solutions" && (
@@ -120,7 +120,7 @@ export default function NavHead() {
                   onClick={() => toggleDropdown("presence")}
                   className="flex items-center space-x-1 text-gray-700 hover:text-orange-400 font-medium"
                 >
-                  <span>Our Presence</span>
+                  <span className="text-lg">Our Presence</span>
                   <ChevronDown className="w-4 h-4" />
                 </button>
                 {activeDropdown === "presence" && (
@@ -154,7 +154,7 @@ export default function NavHead() {
                   onClick={() => toggleDropdown("more")}
                   className="flex items-center space-x-1 text-gray-700 hover:text-orange-400 font-medium"
                 >
-                  <span>More</span>
+                  <span className="text-lg">More</span>
                   <ChevronDown className="w-4 h-4" />
                 </button>
                 {activeDropdown === "more" && (
