@@ -1,5 +1,8 @@
 import Crousal from "@/components/crousal";
 import DetailQuote from "@/components/datailQuote";
+import ParallaxSection from "@/components/ParallaxSection";
+import StatsSection from "@/components/StatsSection";
+import TrustedBySlider from "@/components/trusted-by-slider";
 import { MessageSquare, Zap } from "lucide-react";
 import { Button } from "react-day-picker";
 
@@ -31,6 +34,9 @@ export default function HomeOfferingsPage() {
 //       </section>
   <section><Crousal />
   <DetailQuote />
+  <StatsSection />
+  <ParallaxSection />
+  <TrustedBySlider />
   </section>
   
 

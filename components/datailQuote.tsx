@@ -3,7 +3,7 @@
 export default function DetailQuote() {
   return (
 
-<section className="bg-gradient-to-r from-orange-900 to-blue-950 py-12">
+<section className="bg-gradient-to-r from-orange-600 to-blue-300 py-12">
   <div className="max-w-7xl mx-auto px-4 grid grid-cols-1 lg:grid-cols-2 gap-10 items-center">
 
     {/* <!-- Left Content --> */}
