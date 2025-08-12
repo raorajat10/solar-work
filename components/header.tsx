@@ -1,139 +1,229 @@
-"use client";
-import { useState } from "react";
+"use client"
 import Link from "next/link";
-import { Menu, X } from "lucide-react";
+import { useState } from "react"
+import {
+  ChevronDown,
+  Menu,
+  X,
+  Home,
+  Building,
+  Users,
+  Sun,
+  Zap,
+  Shield,
+  Wrench,
+  Phone,
+  MapPin,
+  ArrowRight,
+} from "lucide-react"
+import { Button } from "@/components/ui/button"
 
-export default function Header() {
-  const [menuOpen, setMenuOpen] = useState(false);
-  const [openDropdown, setOpenDropdown] = useState<string | null>(null);
-  const [desktopDropdown, setDesktopDropdown] = useState<string | null>(null);
+export default function NavHead() {
+  const [isMenuOpen, setIsMenuOpen] = useState(false)
+  const [activeDropdown, setActiveDropdown] = useState<string | null>(null)
 
-  const toggleDropdown = (name: string) => {
-    setOpenDropdown(openDropdown === name ? null : name);
-  };
-
-  const menuData = [
-    {
-      name: "offerings",
-      label: "Our Offerings",
-      links: [
-        { href: "/home", text: "Home" },
-        { href: "/commercial", text: "Commercial" },
-        { href: "/housing-societies", text: "Housing Societies" },
-      ],
-    },
-    {
-      name: "solutions",
-      label: "Solar Solutions",
-      links: [
-        { href: "/off-grid", text: "Off-Grid" },
-        { href: "/on-grid", text: "On-Grid" },
-      ],
-    },
-    {
-      name: "about",
-      label: "About Us",
-      links: [
-        { href: "/company-profile", text: "Company Profile" },
-        { href: "/our-team", text: "Our Team" },
-        { href: "/mission-vision", text: "Mission & Vision" },
-      ],
-    },
-    {
-      name: "more",
-      label: "More",
-      links: [
-        { href: "/solar-calculator", text: "Solar Calculator" },
-        { href: "/webinars", text: "Webinars" },
-        { href: "/solar-pro", text: "Solar Pro" },
-        { href: "/careers", text: "Careers" },
-      ],
-    },
-  ];
+  const toggleDropdown = (menu: string) => {
+    setActiveDropdown(activeDropdown === menu ? null : menu)
+  }
 
   return (
-    <header className="bg-white shadow-md fixed top-0 left-0 w-full z-50">
-      <div className="max-w-7xl mx-auto flex items-center justify-between px-6 py-4">
-        {/* Logo */}
-        <Link href="/" className="text-xl font-bold text-orange-400">
-          Sarvatra Energy
-        </Link>
-
-        {/* Desktop Menu */}
-        <nav className="hidden md:flex items-center space-x-8">
-          {menuData.map((menu) => (
-            <div
-              key={menu.name}
-              className="relative"
-              onMouseEnter={() => setDesktopDropdown(menu.name)}
-              onMouseLeave={() => setDesktopDropdown(null)}
-            >
-              <button className="text-orange-400">{menu.label}</button>
-              {desktopDropdown === menu.name && (
-                <div className="absolute left-0 top-full bg-white border rounded-lg shadow-lg mt-0 z-50">
-                  {menu.links.map((link) => (
-                    <Link
-                      key={link.href}
-                      href={link.href}
-                      className="block px-4 py-2 hover:bg-gray-100 whitespace-nowrap"
-                    >
-                      {link.text}
-                    </Link>
-                  ))}
-                </div>
-              )}
+      <nav className="bg-white shadow-sm border-b sticky top-0 z-50">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="flex justify-between items-center h-16">
+            {/* Logo */}
+            <div className="flex items-center space-x-2">
+              <div className="w-8 h-8 bg-blue-600 rounded flex items-center justify-center">
+                <Sun className="w-5 h-5 text-white" />
+              </div>
+              <div className="text-orange-400 font-bold text-lg">
+                <span className="text-2xl text-orange-400"> Sarvatra Energy</span>
+              </div>
             </div>
-          ))}
-          <Link href="/projects" className="text-orange-400">
-            Projects
-          </Link>
-          <Link href="/contact" className="text-orange-400">
-            Contact
-          </Link>
-        </nav>
 
-        {/* Mobile Menu Button */}
-        <div className="md:hidden">
-          <button onClick={() => setMenuOpen(!menuOpen)}>
-            {menuOpen ? <X size={24} /> : <Menu size={24} />}
-          </button>
-        </div>
-      </div>
+            {/* Desktop Navigation */}
+            <div className="hidden lg:flex items-center space-x-8">
+              {/* Our Offerings Dropdown */}
+              <div className="relative">
+                <button
+                  onClick={() => toggleDropdown("offerings")}
+                  className="flex items-center space-x-1 text-gray-700 hover:text-orange-400 font-medium"
+                >
+                  <span>Our Offerings</span>
+                  <ChevronDown className="w-4 h-4" />
+                </button>
+                {activeDropdown === "offerings" && (
+                  <div className="absolute top-full left-0 mt-2 w-48 bg-white rounded-lg shadow-lg border py-2 z-50">
+                    <a
+                      href="/offerings/home"
+                      className="flex items-center px-4 py-2 text-gray-700 hover:bg-blue-50 hover:text-orange-400"
+                    >
+                      <Home className="w-4 h-4 mr-3" />
+                    Home
+                    </a>
+                    <a
+                      href="/offerings/commercial"
+                      className="flex items-center px-4 py-2 text-gray-700 hover:bg-blue-50 hover:text-orange-400"
+                    >
+                      <Building className="w-4 h-4 mr-3" />
+                      Commercial
+                    </a>
+                    <a
+                      href="/offerings/institution"
+                      className="flex items-center px-4 py-2 text-gray-700 hover:bg-blue-50 hover:text-orange-400"
+                    >
+                      <Users className="w-4 h-4 mr-3" />
+                      institution
+                    </a>
+                  </div>
+                )}
+              </div>
 
-      {/* Mobile Menu */}
-      {menuOpen && (
-        <div className="md:hidden bg-white border-t shadow-lg">
-          {menuData.map((menu) => (
-            <div key={menu.name}>
-              <button
-                onClick={() => toggleDropdown(menu.name)}
-                className="w-full px-4 py-2 flex justify-between items-center"
-              >
-                {menu.label} {openDropdown === menu.name ? "▲" : "▼"}
+              {/* Solar Solutions Dropdown */}
+              <div className="relative">
+                <button
+                  onClick={() => toggleDropdown("solutions")}
+                  className="flex items-center space-x-1 text-gray-700 hover:text-orange-400 font-medium"
+                >
+                  <span>Solar Solutions</span>
+                  <ChevronDown className="w-4 h-4" />
+                </button>
+                {activeDropdown === "solutions" && (
+                  <div className="absolute top-full left-0 mt-2 w-48 bg-white rounded-lg shadow-lg border py-2 z-50">
+                    <a
+                      href="#grid-tied"
+                      className="flex items-center px-4 py-2 text-gray-700 hover:bg-blue-50 hover:text-orange-400"
+                    >
+                      <Zap className="w-4 h-4 mr-3" />
+                      Grid-Tied Systems
+                    </a>
+                    <a
+                      href="#off-grid"
+                      className="flex items-center px-4 py-2 text-gray-700 hover:bg-blue-50 hover:text-orange-400"
+                    >
+                      <Shield className="w-4 h-4 mr-3" />
+                      Off-Grid Systems
+                    </a>
+                    <a
+                      href="#maintenance"
+                      className="flex items-center px-4 py-2 text-gray-700 hover:bg-blue-50 hover:text-orange-400"
+                    >
+                      <Wrench className="w-4 h-4 mr-3" />
+                      Maintenance
+                    </a>
+                  </div>
+                )}
+              </div>
+
+              {/* Our Presence Dropdown */}
+              <div className="relative">
+                <button
+                  onClick={() => toggleDropdown("presence")}
+                  className="flex items-center space-x-1 text-gray-700 hover:text-orange-400 font-medium"
+                >
+                  <span>Our Presence</span>
+                  <ChevronDown className="w-4 h-4" />
+                </button>
+                {activeDropdown === "presence" && (
+                  <div className="absolute top-full left-0 mt-2 w-48 bg-white rounded-lg shadow-lg border py-2 z-50">
+                    <a
+                      href="#locations"
+                      className="flex items-center px-4 py-2 text-gray-700 hover:bg-blue-50 hover:text-orange-400"
+                    >
+                      <MapPin className="w-4 h-4 mr-3" />
+                      Our Locations
+                    </a>
+                    <a
+                      href="#projects"
+                      className="flex items-center px-4 py-2 text-gray-700 hover:bg-blue-50 hover:text-orange-400"
+                    >
+                      <Building className="w-4 h-4 mr-3" />
+                      Completed Projects
+                    </a>
+                  </div>
+                )}
+              </div>
+
+              {/* Blog */}
+              <a href="#blog" className="text-gray-700 hover:text-orange-400 font-medium">
+                Blog
+              </a>
+
+              {/* More Dropdown */}
+              <div className="relative">
+                <button
+                  onClick={() => toggleDropdown("more")}
+                  className="flex items-center space-x-1 text-gray-700 hover:text-orange-400 font-medium"
+                >
+                  <span>More</span>
+                  <ChevronDown className="w-4 h-4" />
+                </button>
+                {activeDropdown === "more" && (
+                  <div className="absolute top-full left-0 mt-2 w-48 bg-white rounded-lg shadow-lg border py-2 z-50">
+                    <a
+                      href="#about"
+                      className="flex items-center px-4 py-2 text-gray-700 hover:bg-blue-50 hover:text-orange-400"
+                    >
+                      <Users className="w-4 h-4 mr-3" />
+                      About Us
+                    </a>
+                    <a
+                      href="#contact"
+                      className="flex items-center px-4 py-2 text-gray-700 hover:bg-blue-50 hover:text-orange-400"
+                    >
+                      <Phone className="w-4 h-4 mr-3" />
+                      Contact
+                    </a>
+                  </div>
+                )}
+              </div>
+            </div>
+
+            {/* CTA Button */}
+            <div className="hidden lg:block">
+              <Button className="bg-orange-400 hover:bg-orange-700 text-white px-6 py-2 rounded-full font-medium">
+                Sign up for free electricity
+                <ArrowRight className="w-4 h-4 ml-2" />
+              </Button>
+            </div>
+
+            {/* Mobile menu button */}
+            <div className="lg:hidden">
+              <button onClick={() => setIsMenuOpen(!isMenuOpen)} className="text-gray-700 hover:text-blue-600">
+                {isMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
               </button>
-              {openDropdown === menu.name && (
-                <div className="pl-6">
-                  {menu.links.map((link) => (
-                    <Link
-                      key={link.href}
-                      href={link.href}
-                      className="block px-4 py-2"
-                    >
-                      {link.text}
-                    </Link>
-                  ))}
-                </div>
-              )}
             </div>
-          ))}
-          <Link href="/projects" className="block px-4 py-2">
-            Projects
-          </Link>
-          <Link href="/contact" className="block px-4 py-2">
-            Contact
-          </Link>
+          </div>
+
+          {/* Mobile Navigation */}
+          {isMenuOpen && (
+            <div className="lg:hidden border-t bg-white">
+              <div className="px-2 pt-2 pb-3 space-y-1">
+                <a href="#home" className="block px-3 py-2 text-gray-700 hover:text-blue-600">
+                  Home
+                </a>
+                <a href="#commercial" className="block px-3 py-2 text-gray-700 hover:text-blue-600">
+                  Commercial
+                </a>
+                <a href="#solutions" className="block px-3 py-2 text-gray-700 hover:text-blue-600">
+                  Solar Solutions
+                </a>
+                <a href="#blog" className="block px-3 py-2 text-gray-700 hover:text-blue-600">
+                  Blog
+                </a>
+                <a href="#about" className="block px-3 py-2 text-gray-700 hover:text-blue-600">
+                  About Us
+                </a>
+                <a href="#contact" className="block px-3 py-2 text-gray-700 hover:text-blue-600">
+                  Contact
+                </a>
+                <div className="pt-2">
+                  <Button className="w-full bg-blue-600 hover:bg-blue-700 text-white">
+                    Sign up for free electricity
+                  </Button>
+                </div>
+              </div>
+            </div>
+          )}
         </div>
-      )}
-    </header>
-  );
-}
+      </nav>
+    )}

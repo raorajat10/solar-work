@@ -1,9 +1,10 @@
 // app/layout.tsx
 
+import NavHead from '@/components/header'
 import './globals.css'
 import type { Metadata } from 'next'
-import { Inter } from 'next/font/google'
-import { Roboto_Mono } from 'next/font/google'
+import { Inter, Roboto_Mono } from 'next/font/google'
+import Footer from '@/components/footer'
 
 const inter = Inter({
   subsets: ['latin'],
@@ -30,7 +31,11 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" className={`${inter.variable} ${robotoMono.variable}`}>
-      <body>{children}</body>
+      <body>
+        <NavHead /> {/* Navbar stays here so it appears on all pages */}
+        {children}
+        <Footer />
+      </body>
     </html>
   )
 }
