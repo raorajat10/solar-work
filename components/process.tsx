@@ -55,11 +55,11 @@ export default function Process() {
     <div className="cursor-pointer py-10 bg-gradient-to-r from-orange-600 to-blue-300">
       <div className="max-w-6xl mx-auto px-4">
         {/* Header */}
-        <div className="text-center mb-12">
-          <h2 className="text-3xl font-bold text-gray-800">
+        <div className="text-center mb-16">
+          <h2 className="text-2xl md:text-5xl font-bold text-white">
             The solar switch made simple
           </h2>
-          <p className="mt-2 text-gray-600 max-w-2xl mx-auto">
+          <p className="mt-2 text-white max-w-2xl mx-auto">
             Switching to solar can seem daunting, but we’ve got you covered.
             Here’s how it works
           </p>
