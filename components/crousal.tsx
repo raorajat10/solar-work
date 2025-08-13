@@ -4,6 +4,7 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import { Autoplay,Pagination, Mousewheel } from "swiper/modules";
 import "swiper/css";
 import "swiper/css/pagination";
+import { useEffect } from "react";
 
 const slides = [
   {
@@ -22,6 +23,8 @@ const slides = [
     img: "/images/image3.jpg",
   },
 ];
+// function getQuote() {
+//   window.location.href = "#get-quote";
 
 export default function VerticalCarousel() {
   return (
@@ -51,6 +54,7 @@ export default function VerticalCarousel() {
                 <h2 className="text-6xl font-bold">{slide.title}</h2>
                 <p className="mt-3 text-3xl text-white ">{slide.text}</p>
               </div>
+              {/* <button onClick={getQuote}></button> */}
             </div>
           </SwiperSlide>
         ))}

@@ -1,6 +1,7 @@
 import Crousal from "@/components/crousal";
 import DetailQuote from "@/components/datailQuote";
 import ParallaxSection from "@/components/ParallaxSection";
+import Process from "@/components/process";
 import StatsSection from "@/components/StatsSection";
 import TrustedBySlider from "@/components/trusted-by-slider";
 import { MessageSquare, Zap } from "lucide-react";
@@ -37,6 +38,7 @@ export default function HomeOfferingsPage() {
   <StatsSection />
   <ParallaxSection />
   <TrustedBySlider />
+  <Process />
   </section>
   
 

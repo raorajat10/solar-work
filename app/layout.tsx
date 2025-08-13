@@ -31,7 +31,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" className={`${inter.variable} ${robotoMono.variable}`}>
-      <body>
+      <body className='cursor-default'>
         <NavHead /> {/* Navbar stays here so it appears on all pages */}
         {children}
         <Footer />

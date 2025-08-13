@@ -5,7 +5,7 @@ export default function WhoAreWe() {
     <section className="py-10 px-4 bg-white">
       <div className="max-w-7xl mx-auto">
         {/* Header */}
-        <h2 className="text-4xl md:text-6xl font-bold text-center text-orange-500 mb-16">Who are we?</h2>
+        <h2 className="text-2xl md:text-5xl font-bold text-center text-orange-500 mb-16">Who are we?</h2>
 
         {/* Photo Grid Layout */}
         <div className="relative min-h-[600px] md:min-h-[500px]">

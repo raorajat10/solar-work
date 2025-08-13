@@ -1,55 +1,47 @@
 "use client";
 
-import dynamic from "next/dynamic";
-import Image from "next/image";
+import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
-
-import type { Settings } from "react-slick";
-const Slider = dynamic(() => import("react-slick"), { ssr: false }) as React.ComponentType<Settings>;
+import { Settings } from "react-slick";
+const partners = [
+  "/images/logo1.png",
+  "/images/logo2.webp",
+  "/images/logo3.png",
+  "/images/logo4.png",
+  "/images/logo5.jpg",
+];
 
 export default function TrustedPartner() {
-  const settings = {
-    lazyLoad: "ondemand" as const,
+  const settings: Settings = {
     dots: false,
     infinite: true,
     speed: 500,
-    slidesToShow: 3,
+    lazyLoad: "ondemand", // load images only when needed
+    slidesToShow: 4,
     slidesToScroll: 1,
     autoplay: true,
     autoplaySpeed: 2000,
-    arrows: false,
-    responsive: [
-      { breakpoint: 1024, settings: { slidesToShow: 2 } },
-      { breakpoint: 640, settings: { slidesToShow: 1 } },
-    ],
   };
 
-  const partners = [
-    "/images/logo1.png",
-    "/images/logo2.webp",
-    "/images/logo3.png",
-    "/images/logo4.jpg",
-    "/images/logo5.webp",
-  ];
 
   return (
-    <section className="max-w-6xl mx-auto px-4 py-12">
-      <h2 className="text-3xl font-bold text-center mb-8">
-        Our Trusted Partners
-      </h2>
-      <Slider {...settings}>
-        {partners.map((logo, i) => (
-          <div key={i} className="px-4">
-            {/* Using data-lazy for Slick */}
-            <img
-              data-lazy={logo}
-              alt={`Partner ${i + 1}`}
-              className="mx-auto h-24 object-contain"
-            />
-          </div>
-        ))}
-      </Slider>
-    </section>
+    <div className="max-w-6xl mx-auto py-10">
+      <h2 className="text-2xl md:text-5xl text-orange-500 font-bold text-center mb-6">Our Trusted Partners</h2>
+     <Slider {...settings}>
+  {partners.map((src, i) => (
+    <div key={i}>
+      <div className="flex justify-center items-center h-32"> {/* height optional */}
+        <img
+          src={src}
+          alt={`Partner ${i + 1}`}
+          className="h-24 w-auto object-contain"
+        />
+      </div>
+    </div>
+  ))}
+</Slider>
+
+    </div>
   );
 }
