@@ -1,5 +1,6 @@
 import Crousal from "@/components/crousal";
 import DetailQuote from "@/components/datailQuote";
+import FAQ from "@/components/FAQ";
 import ParallaxSection from "@/components/ParallaxSection";
 import Process from "@/components/process";
 import StatsSection from "@/components/StatsSection";
@@ -39,6 +40,7 @@ export default function HomeOfferingsPage() {
   <ParallaxSection />
   <TrustedBySlider />
   <Process />
+  <FAQ />
   </section>
   
 

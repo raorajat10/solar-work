@@ -1,10 +1,21 @@
+import CommercialPhoto from "@/components/commercialphoto";
+import Customer from "@/components/customer";
+import Gif from "@/components/gif";
+import Reviews from "@/components/reviews";
+import SolarFeatures from "@/components/SolarFeatures";
+import SolarProjectEnquiry from "@/components/SolarProjectEnquiry";
+import SolarStats from "@/components/SolarStats";
+
 export default function CommercialOfferingsPage() {
   return (
-    <main className="p-8">
-      <h1 className="text-3xl font-bold">Commercial Offerings</h1>
-      <p className="mt-4 text-gray-600">
-        Explore our solar energy solutions tailored for businesses.
-      </p>
-    </main>
+    <>
+      <CommercialPhoto />
+      <Reviews />
+      {/* <Gif /> */}
+      <SolarProjectEnquiry />
+      <SolarFeatures />
+      <SolarStats />
+      <Customer />
+    </>
   );
 }
