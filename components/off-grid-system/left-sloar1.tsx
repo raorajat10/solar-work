@@ -2,6 +2,8 @@
 
 import Leftsolar2 from "./left-solar2";
 import Leftsolar3 from "./left-solar3";
+import Leftsolar4 from "./left-solar4";
+import Leftsolar5 from "./left-solar5";
 
 
 
@@ -27,6 +29,8 @@ export default function Leftsolar1() {
       </ul>
       <Leftsolar2/>
       <Leftsolar3/>
+      <Leftsolar4/>
+      <Leftsolar5/>
 
     </div>
   );
