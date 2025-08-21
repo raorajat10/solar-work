@@ -3,7 +3,7 @@
 export default function Leftsolar2() {
   return (
     <div className="mb-8">
-      <h2 className=" text-lg md:text-xl font-bold text-cyan-700  my-2 mb-6">
+      <h2 className=" text-lg md:text-3xl font-bold text-cyan-700  my-2 mb-6">
         Off grid solar components and their working
       </h2>
       <div className="mb-4">

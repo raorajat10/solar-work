@@ -1,6 +1,6 @@
 "use client";
 
-export default function Leftsolar5() {
+export default function Leftsolar5on() {
   return (
     <div>
       <p className="text-orange-500 md:text-lg text-sm mb-4 leading-relaxed">
@@ -77,9 +77,9 @@ export default function Leftsolar5() {
         <p className="text-orange-500 md:text-lg text-sm mb-4 leading-relaxed">
           Yes, ROI is a limitation of having an off grid solar system, but off
           grid power has certain amazing benefits that make it a good
-          investment. Have a look. </p>
+          investment. Have a look.
           <br />
-          <br />
+          <br /></p>
           <ul className="list-disc pl-4 marker:text-2xl my-auto marker:text-cyan-700 mb-6 md:text-lg text-sm">
             <li className="text-orange-500">
               <p>
@@ -160,9 +160,9 @@ export default function Leftsolar5() {
           3. How does an off-grid solar system work?
         </h2>
         <p className="text-orange-500 md:text-lg text-sm leading-relaxed">
-          Here’s the simplest explanation of how an off grid solar system for home works:</p>
+          Here’s the simplest explanation of how an off grid solar system for home works:
           <br />
-          <br />
+          <br /></p>
           <ul className="list-disc pl-4 marker:text-2xl marker:text-cyan-700 mb-6 md:text-lg text-sm">
             <li className="text-orange-500">
               <p>

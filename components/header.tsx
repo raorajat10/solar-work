@@ -94,14 +94,14 @@ export default function NavHead() {
                       className="flex items-center px-4 py-2 text-cyan-700 hover:bg-blue-50 hover:text-orange-400"
                     >
                       <Zap className="w-4 h-4 mr-3" />
-                      Grid-Tied Systems
+                      Off-Grid Systems
                     </a>
                     <a
-                      href="#off-grid"
+                      href="/solutions/on-grid"
                       className="flex items-center px-4 py-2 text-cyan-700 hover:bg-blue-50 hover:text-orange-400"
                     >
                       <Shield className="w-4 h-4 mr-3" />
-                      Off-Grid Systems
+                      On-Grid Systems
                     </a>
                     <a
                       href="#maintenance"
