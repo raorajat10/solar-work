@@ -13,10 +13,10 @@ export default function Leftsolar2on() {
       </p> */}
       <div className="mb-4">
         {" "}
-        <p className="font-bold md:text-xl text-lg mb-1 text-orange-400">
+        <p className="font-bold md:text-xl text-lg mb-1 text-orange-500">
           #1. Solar panels
         </p>
-        <p className="text-lg md:text-xl text-orange-400">
+        <p className="text-lg md:text-xl text-orange-500">
           Solar panels in a solar grid for home are the most visible parts.
           They’re installed on the rooftop, facing the South direction. When
           sunlight falls on these panels, they absorb that sunlight and convert
@@ -33,10 +33,10 @@ export default function Leftsolar2on() {
       </div>
       <div className="mb-4">
         {" "}
-        <p className="font-bold md:text-xl text-lg mb-1 text-orange-400">
+        <p className="font-bold md:text-xl text-lg mb-1 text-orange-500">
           #2. Solar inverter
         </p>
-        <p className="text-lg md:text-xl text-orange-400">
+        <p className="text-lg md:text-xl text-orange-500">
           The entire solar system would have been an impractical model had there
           been no solar inverter. The solar inverter takes up the role of
           converting DC into AC.
@@ -49,10 +49,10 @@ export default function Leftsolar2on() {
       </div>
       <div className="mb-4">
         {" "}
-        <p className="font-bold md:text-xl text-lg mb-1 text-orange-400">
+        <p className="font-bold md:text-xl text-lg mb-1 text-orange-500">
           #3. Solar mounting structures
         </p>
-        <p className="text-lg md:text-xl text-orange-400">
+        <p className="text-lg md:text-xl text-orange-500">
           These are the pillars that carry the weight of solar panels. They have
           to be of a standard grade so that they can withstand heavy winds
           during storms & cyclones and hold the weight of the solar panels for
@@ -70,10 +70,10 @@ export default function Leftsolar2on() {
       </div>
       <div className="mb-4">
         {" "}
-        <p className="font-bold md:text-xl text-lg mb-1 text-orange-400">
+        <p className="font-bold md:text-xl text-lg mb-1 text-orange-500">
           #4. Solar accessories
         </p>
-        <p className="text-lg md:text-xl text-orange-400">
+        <p className="text-lg md:text-xl text-orange-500">
           These include the AC and DC cables that are required for wiring solar
           panels and connecting different parts to make the entire solar grid
           functional.
@@ -107,18 +107,18 @@ export default function Leftsolar2on() {
 
       <div className="mb-4">
         {" "}
-        <p className="font-bold md:text-xl text-lg mb-1 text-orange-400">
+        <p className="font-bold md:text-xl text-lg mb-1 text-orange-500">
           #5. Bi-directional meter
         </p>
-        <p className="text-lg md:text-xl text-orange-400">
+        <p className="text-lg md:text-xl text-orange-500">
           This is a smart tracking meter that is basically designed to keep a
           track of:
         </p>
         <ul className="list-disc pl-4 marker:text-2xl marker:text-cyan-700 md:text-lg text-sm mb-2">
-          <li className="text-orange-400">Solar energy production</li>
-          <li className="text-orange-400">Energy consumption</li>
+          <li className="text-orange-500">Solar energy production</li>
+          <li className="text-orange-500">Energy consumption</li>
         </ul>
-        <p className="text-lg md:text-xl text-orange-400">
+        <p className="text-lg md:text-xl text-orange-500">
           An on-grid solar system does not get functional until and unless the
           regular meter is replaced with a bi-directional meter.
         </p>
