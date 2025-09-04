@@ -103,13 +103,13 @@ export default function NavHead() {
                       <Shield className="w-4 h-4 mr-3" />
                       On-Grid Systems
                     </a>
-                    <a
+                    {/* <a
                       href="#maintenance"
                       className="flex items-center px-4 py-2 text-cyan-700 hover:bg-blue-50 hover:text-orange-400"
                     >
                       <Wrench className="w-4 h-4 mr-3" />
                       Maintenance
-                    </a>
+                    </a> */}
                   </div>
                 )}
               </div>
