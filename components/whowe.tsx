@@ -12,7 +12,7 @@ export default function WhoAreWe() {
           {/* Top Left - Solar panels team photo */}
           <div className="absolute top-0 left-0 md:left-8 w-64 h-80 rounded-3xl overflow-hidden shadow-lg transform -rotate-3 hover:rotate-0 transition-transform duration-300">
             <Image
-              src="/placeholder.svg?height=320&width=256"
+              src="/images/team-1.jpg?height=320&width=256"
               alt="Team working with solar panels"
               fill
               className="object-cover"
@@ -25,7 +25,7 @@ export default function WhoAreWe() {
           {/* Middle Left - Three people in blue shirts */}
           <div className="absolute top-32 md:top-48 left-4 md:left-16 w-48 h-64 rounded-3xl overflow-hidden shadow-lg transform rotate-6 hover:rotate-0 transition-transform duration-300">
             <Image
-              src="/placeholder.svg?height=256&width=192"
+              src="/images/team-2.jpg?height=256&width=192"
               alt="Three team members in blue shirts"
               fill
               className="object-cover"
@@ -35,7 +35,7 @@ export default function WhoAreWe() {
           {/* Center Top - Large group photo */}
           <div className="absolute top-8 left-1/2 transform -translate-x-1/2 w-72 h-56 rounded-3xl overflow-hidden shadow-lg hover:scale-105 transition-transform duration-300">
             <Image
-              src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Screenshot%202025-08-12%20125213-5RmP6l4iCAc7EwgoyVFdTlDlTfF48O.png"
+              src="/images/team-3.jpg?height=224&width=288"
               alt="Large team group photo"
               fill
               className="object-cover"
@@ -48,7 +48,7 @@ export default function WhoAreWe() {
           {/* Top Right - Office meeting photo */}
           <div className="absolute top-24 right-0 md:right-8 w-64 h-72 rounded-3xl overflow-hidden shadow-lg transform rotate-3 hover:rotate-0 transition-transform duration-300">
             <Image
-              src="/placeholder.svg?height=288&width=256"
+              src="/images/team-4.jpg?height=288&width=256"
               alt="Team meeting in office"
               fill
               className="object-cover"
@@ -58,7 +58,7 @@ export default function WhoAreWe() {
           {/* Bottom Center - Foosball photo */}
           <div className="absolute bottom-0 left-1/2 transform -translate-x-1/2 w-56 h-48 rounded-3xl overflow-hidden shadow-lg -rotate-2 hover:rotate-0 transition-transform duration-300">
             <Image
-              src="/placeholder.svg?height=192&width=224"
+              src="/images/team-5.jpg?height=192&width=224"
               alt="Team playing foosball"
               fill
               className="object-cover"

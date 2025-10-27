@@ -144,9 +144,9 @@ export default function NavHead() {
               </div>
 
               {/* Blog */}
-              <a href="#blog" className="text-cyan-700 hover:text-orange-400 font-medium">
+              {/* <a href="#blog" className="text-cyan-700 hover:text-orange-400 font-medium">
                 Blog
-              </a>
+              </a> */}
 
               {/* More Dropdown */}
               <div className="relative">
@@ -172,6 +172,13 @@ export default function NavHead() {
                     >
                       <Phone className="w-4 h-4 mr-3" />
                       Contact
+                    </a>
+                    <a
+                      href="/solar-calculator"
+                      className="flex items-center px-4 py-2 text-cyan-700 hover:bg-blue-50 hover:text-orange-400"
+                    >
+                      <Phone className="w-4 h-4 mr-3" />
+                      Solar Calculator
                     </a>
                   </div>
                 )}
