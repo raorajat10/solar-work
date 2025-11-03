@@ -28,10 +28,10 @@ export default function SolarProjectEnquiry() {
 
     try {
       await emailjs.send(
-        process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID!,
-        process.env.NEXT_PUBLIC_EMAILJS_PROJECT_TEMPLATE_ID!, // use a different template ID for this form
+        process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID_INSTITUTIONAL!,
+        process.env.NEXT_PUBLIC_EMAILJS_INSTITUTION_TEMPLATE_ID!,
         formData,
-        process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY!
+        process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY_INSTITUTIONAL!
       );
       setStatus("✅ Enquiry submitted successfully!");
       setFormData({
