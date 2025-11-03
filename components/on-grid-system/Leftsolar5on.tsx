@@ -249,7 +249,7 @@ export default function Leftsolar5on() {
         stuck with the wrong company.
         <br />
         <br />
-        We, at SolarSquare, make solar installation hassle-free.
+        We, at Sarvatra Energy, make solar installation hassle-free.
         <br />
         <br />
         We deliver more than just promises:

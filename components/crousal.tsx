@@ -10,7 +10,7 @@ const slides = [
   {
     title: "Your roof, your solar responsibility",
     text: "End to end service. No hassle, no worries.",
-    img: "/images/image1.jpg",
+    img: "/images/bg-12.jpg",
   },
   {
     title: "Cyclone-proof solar systems",

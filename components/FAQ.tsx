@@ -38,7 +38,7 @@ export default function TabDropdown() {
 
 <div className="w-full flex  justify-between">
     <div>
-        <img src="/images/FAQ.webp" alt="" />
+        <img src="/images/del.png" alt="" />
     </div>
 
 <div className="w-full">

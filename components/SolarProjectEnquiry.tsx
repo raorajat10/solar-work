@@ -1,7 +1,54 @@
 // app/components/SolarProjectEnquiry.tsx
 "use client";
 
+import { useState } from "react";
+import emailjs from "@emailjs/browser";
+
 export default function SolarProjectEnquiry() {
+  const [formData, setFormData] = useState({
+    name: "",
+    company: "",
+    whatsapp: "",
+    city: "",
+    pincode: "",
+    bill: "",
+    terms: true,
+  });
+
+  const [status, setStatus] = useState("");
+
+  const handleChange = (e: any) => {
+    const { name, value, type, checked } = e.target;
+    setFormData({ ...formData, [name]: type === "checkbox" ? checked : value });
+  };
+
+  const handleSubmit = async (e: any) => {
+    e.preventDefault();
+    setStatus("Sending...");
+
+    try {
+      await emailjs.send(
+        process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID!,
+        process.env.NEXT_PUBLIC_EMAILJS_PROJECT_TEMPLATE_ID!, // use a different template ID for this form
+        formData,
+        process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY!
+      );
+      setStatus("✅ Enquiry submitted successfully!");
+      setFormData({
+        name: "",
+        company: "",
+        whatsapp: "",
+        city: "",
+        pincode: "",
+        bill: "",
+        terms: true,
+      });
+    } catch (error) {
+      console.error(error);
+      setStatus("❌ Failed to send enquiry. Please try again.");
+    }
+  };
+
   return (
     <section className="animate-in bg-gradient-to-r from-orange-600 to-blue-300 text-white py-12 px-6">
       <div className="max-w-6xl mx-auto grid md:grid-cols-2 gap-8 items-center">
@@ -17,16 +64,23 @@ export default function SolarProjectEnquiry() {
 
         {/* Right Form Section */}
         <div className="bg-white rounded-2xl shadow-lg p-6 text-black">
-          <form className="text-cyan-700 space-y-4">
+          <form
+            onSubmit={handleSubmit}
+            className="text-cyan-700 space-y-4"
+            autoComplete="off"
+          >
             {/* Name */}
             <div>
               <label className="block font-medium mb-1">
                 Name <span className="text-red-500">*</span>
               </label>
               <input
+                name="name"
+                value={formData.name}
+                onChange={handleChange}
                 type="text"
-                className="w-full border border-gray-300 rounded-lg px-4 py-2 focus:outline-none focus:ring-2 focus:ring-cyan-400"
                 required
+                className="w-full border border-gray-300 rounded-lg px-4 py-2 focus:outline-none focus:ring-2 focus:ring-cyan-400"
               />
             </div>
 
@@ -36,9 +90,12 @@ export default function SolarProjectEnquiry() {
                 Company Name <span className="text-red-500">*</span>
               </label>
               <input
+                name="company"
+                value={formData.company}
+                onChange={handleChange}
                 type="text"
-                className="w-full border border-gray-300 rounded-lg px-4 py-2 focus:outline-none focus:ring-2 focus:ring-cyan-400"
                 required
+                className="w-full border border-gray-300 rounded-lg px-4 py-2 focus:outline-none focus:ring-2 focus:ring-cyan-400"
               />
             </div>
 
@@ -48,9 +105,12 @@ export default function SolarProjectEnquiry() {
                 WhatsApp number <span className="text-red-500">*</span>
               </label>
               <input
+                name="whatsapp"
+                value={formData.whatsapp}
+                onChange={handleChange}
                 type="tel"
-                className="w-full border border-gray-300 rounded-lg px-4 py-2 focus:outline-none focus:ring-2 focus:ring-cyan-400"
                 required
+                className="w-full border border-gray-300 rounded-lg px-4 py-2 focus:outline-none focus:ring-2 focus:ring-cyan-400"
               />
             </div>
 
@@ -60,18 +120,22 @@ export default function SolarProjectEnquiry() {
                 City <span className="text-red-500">*</span>
               </label>
               <input
+                name="city"
+                value={formData.city}
+                onChange={handleChange}
                 type="text"
-                className="w-full border border-gray-300 rounded-lg px-4 py-2 focus:outline-none focus:ring-2 focus:ring-cyan-400"
                 required
+                className="w-full border border-gray-300 rounded-lg px-4 py-2 focus:outline-none focus:ring-2 focus:ring-cyan-400"
               />
             </div>
 
             {/* Company Pin Code */}
             <div>
-              <label className="block font-medium mb-1">
-                Company Pin code
-              </label>
+              <label className="block font-medium mb-1">Company Pin code</label>
               <input
+                name="pincode"
+                value={formData.pincode}
+                onChange={handleChange}
                 type="text"
                 className="w-full border border-gray-300 rounded-lg px-4 py-2 focus:outline-none focus:ring-2 focus:ring-cyan-400"
               />
@@ -83,17 +147,26 @@ export default function SolarProjectEnquiry() {
                 Average Monthly Bill <span className="text-red-500">*</span>
               </label>
               <input
+                name="bill"
+                value={formData.bill}
+                onChange={handleChange}
                 type="number"
-                className="w-full border border-gray-300 rounded-lg px-4 py-2 focus:outline-none focus:ring-2 focus:ring-cyan-400"
                 required
+                className="w-full border border-gray-300 rounded-lg px-4 py-2 focus:outline-none focus:ring-2 focus:ring-cyan-400"
               />
             </div>
 
             {/* Checkbox */}
             <div className="flex items-start gap-2 text-sm">
-              <input type="checkbox" defaultChecked className="mt-1" />
+              <input
+                name="terms"
+                type="checkbox"
+                checked={formData.terms}
+                onChange={handleChange}
+                className="mt-1"
+              />
               <label className="text-orange-400">
-                I agree to SolarSquare&apos;s{" "}
+                I agree to Sarvatra Energy's&apos;s{" "}
                 <a href="#" className="text-cyan-500 underline">
                   terms of service
                 </a>{" "}
@@ -111,6 +184,8 @@ export default function SolarProjectEnquiry() {
             >
               Submit
             </button>
+
+            {status && <p className="text-center text-sm mt-2">{status}</p>}
           </form>
         </div>
       </div>

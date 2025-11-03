@@ -7,7 +7,7 @@ export default function LeftSolarParton() {
         About Sarvatra Energy
       </h2>
       <p className="text-orange-500 md:text-lg text-sm mb-4 leading-relaxed">
-        SolarSquare started in 2015 with the desire to escalate the mass
+        Sarvatra Energy started in 2015 with the desire to escalate the mass
         adoption of solar in India.
         <br />
         <br />

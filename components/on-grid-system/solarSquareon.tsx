@@ -62,7 +62,7 @@ export default function SolarSquareon() {
           <div className="flex items-center space-x-2">
             <input type="checkbox" required />
             <p className="text-xs text-orange-400">
-              I agree to SolarSquare's <a href="#" className="underline text-cyan-500">terms of service</a> &{" "}
+              I agree to Sarvatra Energy's <a href="#" className="underline text-cyan-500">terms of service</a> &{" "}
               <a href="#" className="underline">privacy policy</a>
             </p>
           </div>
@@ -105,7 +105,7 @@ export default function SolarSquareon() {
           <div className="flex items-center space-x-2">
             <input type="checkbox" required />
             <p className="text-xs text-orange-400">
-              I agree to SolarSquare's <a href="#" className="text-cyan-500 underline">terms of service</a> &{" "}
+              I agree to Sarvatra Energy's <a href="#" className="text-cyan-500 underline">terms of service</a> &{" "}
               <a href="#" className="underline">privacy policy</a>
             </p>
           </div>
@@ -128,7 +128,7 @@ export default function SolarSquareon() {
           <div className="flex items-center space-x-2">
             <input type="checkbox" required />
             <p className="text-xs text-orange-400">
-              I agree to SolarSquare's <a href="#" className="underline text-cyan-500">terms of service</a> &{" "}
+              I agree to Sarvatra Energy's <a href="#" className="underline text-cyan-500">terms of service</a> &{" "}
               <a href="#" className="underline">privacy policy</a>
             </p>
           </div>

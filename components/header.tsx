@@ -120,18 +120,18 @@ export default function NavHead() {
                   onClick={() => toggleDropdown("presence")}
                   className="flex items-center space-x-1 text-cyan-700 hover:text-orange-400 font-medium"
                 >
-                  <span className="text-lg">Our Presence</span>
+                  <span className="text-lg">Our Projects</span>
                   <ChevronDown className="w-4 h-4" />
                 </button>
                 {activeDropdown === "presence" && (
                   <div className="absolute top-full left-0 mt-2 w-48 bg-white rounded-lg shadow-lg border py-2 z-50">
-                    <a
+                    {/* <a
                       href="#locations"
                       className="flex items-center px-4 py-2 text-cyan-700 hover:bg-blue-50 hover:text-orange-400"
                     >
                       <MapPin className="w-4 h-4 mr-3" />
                       Our Locations
-                    </a>
+                    </a> */}
                     <a
                       href="#projects"
                       className="flex items-center px-4 py-2 text-cyan-700 hover:bg-blue-50 hover:text-orange-400"
@@ -150,7 +150,7 @@ export default function NavHead() {
 
               {/* More Dropdown */}
               <div className="relative">
-                <button
+                {/* <button
                   onClick={() => toggleDropdown("more")}
                   className="flex items-center space-x-1 text-cyan-700 hover:text-orange-400 font-medium"
                 >
@@ -158,30 +158,30 @@ export default function NavHead() {
                   <ChevronDown className="w-4 h-4" />
                 </button>
                 {activeDropdown === "more" && (
-                  <div className="absolute top-full left-0 mt-2 w-48 bg-white rounded-lg shadow-lg border py-2 z-50">
-                    <a
+                  <div className="absolute top-full left-0 mt-2 w-48 bg-white rounded-lg shadow-lg border py-2 z-50"> */}
+                    {/* <a
                       href="#about"
                       className="flex items-center px-4 py-2 text-cyan-700 hover:bg-blue-50 hover:text-orange-400"
                     >
                       <Users className="w-4 h-4 mr-3" />
                       About Us
-                    </a>
-                    <a
+                    </a> */}
+                    {/* <a
                       href="#contact"
                       className="flex items-center px-4 py-2 text-cyan-700 hover:bg-blue-50 hover:text-orange-400"
                     >
                       <Phone className="w-4 h-4 mr-3" />
                       Contact
-                    </a>
-                    <a
+                    </a> */}
+                    {/* <a
                       href="/solar-calculator"
                       className="flex items-center px-4 py-2 text-cyan-700 hover:bg-blue-50 hover:text-orange-400"
                     >
                       <Phone className="w-4 h-4 mr-3" />
                       Solar Calculator
                     </a>
-                  </div>
-                )}
+                  </div> */}
+                {/* )} */}
               </div>
             </div>
 

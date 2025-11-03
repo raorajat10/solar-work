@@ -5,10 +5,10 @@ import WhoAreWe from './whowe';
 
 export default function StatsSection() {
   const stats = [
-    { value: "4.8", label: "rating on Google with 6000+ reviews" },
-    { value: "15+", label: "years of experience" },
-    { value: "25,000+", label: "homes solarised" },
-    { value: "₹90+ Cr", label: "Savings for families across India (2020 – 2025)" },
+    { value: "4.8", label: "rating on Google" },
+    { value: "23+ Group of RBH", label: "years of experience" },
+    { value: "280+", label: "homes solarised" },
+    { value: "₹1.20+ Cr", label: "Savings for families across India (2020 – 2025)" },
   ];
 
   return (

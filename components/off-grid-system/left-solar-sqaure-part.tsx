@@ -7,9 +7,9 @@ export default function LeftSolarPart() {
         About Sarvatra Energy
       </h2>
       <p className="text-orange-500 md:text-lg text-sm mb-4 leading-relaxed">
-        SolarSquare is born out of the passion to de-escalate pollution and
+        Sarvatra Energy is born out of the passion to de-escalate pollution and
         escalate the adoption of mass solar. Two like-minded environment pros
-        from IIT Bombay started SolarSquare in 2015 as a two-member pack. Now,
+        from IIT Bombay started Sarvatra Energy in 2015 as a two-member pack. Now,
         we’re the 3rd largest EPC contractor for residential installations in
         India. We’ve helped 25,000+ homes go solar and have been helping our
         customers save up to 90% on their monthly electricity bills. We install
